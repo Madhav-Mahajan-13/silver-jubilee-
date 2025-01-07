@@ -1,0 +1,141 @@
+/* #root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+} */
+/* Global Styles */
+body {
+  background-color: #1d1d1d;
+  color: #c0c0c0;
+}
+
+/* Custom Form Field Styles */
+.form-control {
+  background-color: #000000 !important;
+  color: #fff !important;
+  border-color: #000000 !important;
+}
+
+button[type="submit"] {
+  background-color: #e1e1e1 !important;
+  border-color: #444 !important;
+}
+
+/* Custom Navbar Styling */
+ .navbar-nav .nav-link {
+  color: #c0c0c0 !important;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #fff !important;
+}
+
+.navbar-nav .nav-link.active {
+  border-bottom: 2px solid #c0c0c0 !important;
+}
+
+
+/* Falling Stars Background */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  /* overflow:hidden;
+  overflow-y: scroll; */
+  overflow-x: hidden;
+  background-color: #000000; /* Dark background */
+}
+
+#root {
+  min-height: 100%; /* Ensures content fills the viewport */
+  position: relative;
+}
+
+.star {
+  position: absolute;
+  top: -10px;
+  width: 5px;
+  height: 5px;
+  background-color: #ffffff;
+  opacity: 0.8;
+  border-radius: 50%;
+  animation: fall 5s infinite linear;
+}
+
+
+
+@keyframes fall {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(100vh) translateX(10px);
+    opacity: 0;
+  }
+}
+
+/* Add random delays and position for stars */
+.star:nth-child(odd) {
+  animation-duration: 4s;
+  animation-delay: 0s;
+}
+
+.star:nth-child(even) {
+  animation-duration: 6s;
+  animation-delay: 1s;
+}
+.page-content {
+  position: relative;
+  z-index: 1; /* Ensures content is above the falling stars */
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background for content */
+  color: white; /* Text color */
+}
+#background-container {
+  position: fixed; /* Use fixed to keep it behind content */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1; /* Push it behind the main content */
+  overflow: hidden; /* Ensure no extra scroll from the animation container */
+}
